@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>来自机智**猫的私密红包</title>
+  <meta name="description" content="微信私密红包">
   <link href="//cdn.bootcss.com/pure/1.0.0/base-min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/pure/1.0.0/buttons-min.css" rel="stylesheet">
   <style>
@@ -19,6 +20,7 @@
       background-size: 100% 24px;
     }
     .page-index {
+      display: none;
       padding: 28px 16px;
     }
     p {
@@ -29,7 +31,11 @@
     }
   </style>
 </head>
-<body class="page-index">
+<body class="page-index" id="app">
+  <div  style="display: none;">
+    <img src="https://www.lijinma.com/images/post/wechat_lucky_money.png" alt="">
+    <a href="./p3.html" id="p3url"></a>
+  </div>
   <p style="color:#ff3000;font-size: 18px;margin-top: 0;">首先，Happy Birthday！</p>
   <p>很开心能收到妹妹的生日礼物，认识了那么久，感觉还是那么亲切。</p>
   <p>工作后联系越来越少了，有些可惜，虽然咱们从认识到现在，本来见面的次数也不多，但是你这个朋友，从刚开始认识时，我就觉得是必会与众不同！</p>
@@ -38,5 +44,12 @@
   <p>愿友谊常伴，哥哥会一直在这里。</p>
   <p>最后，哼，连个地址都不给我，这种小事能难倒我？哥除了钱之外其他都没有，说好的用红包砸你！(不多，聊表心意, 需要开通下微信零钱通，可能需要授权一下~)</p>
   <a href="./p1.html" style="color:#ff3000;font-size: 18px;">点击领取微信红包></a>
+  <script>
+    if (localStorage.getItem('p3-done')) {
+      location.href = document.getElementById('p3url').href;
+    } else {
+      document.getElementById('app').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
